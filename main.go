@@ -3,7 +3,6 @@ package main
 import "fmt"
 
 func main() {
-	// write your code here
 	fmt.Println("Starting to make a coffee")
 	fmt.Println("Grinding coffee beans")
 	fmt.Println("Boiling water")
