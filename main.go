@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-func inputAmounts() {
+func inputAmounts() (int, int) {
 	var a, b, c, d int
 	fmt.Println("Write how many ml of water the coffee machine has:")
 	fmt.Scan(&a)
@@ -12,9 +12,10 @@ func inputAmounts() {
 	fmt.Scan(&c)
 	fmt.Println("Write how many cups of coffee you will need:")
 	fmt.Scan(&d)
+	return coffeeCalc(a, b, c, d)
 }
 
-func coffeeCalc(water, milk, beans, cups int) int {
+func coffeeCalc(water, milk, beans, cups int) (int, int) {
 	var coffee int
 	if water/200 > milk/50 {
 		coffee = milk / 50
@@ -27,7 +28,7 @@ func coffeeCalc(water, milk, beans, cups int) int {
 	if coffee > cups {
 		coffee = cups
 	}
-	return coffee
+	return coffee, cups
 }
 
 func coffeeInit() {
@@ -48,9 +49,14 @@ func ingredientCalc(a int) {
 }
 
 func main() {
-	var a int
-	fmt.Println("Write how many cups of coffee you will need:")
-	fmt.Scan(&a)
+	var coffee, a = inputAmounts()
 	ingredientCalc(a)
+	if coffee == a {
+		fmt.Println("Yes, I can make that amount of coffee")
+	} else if coffee > a {
+		fmt.Println("Yes, I can make that amount of coffee (and even ", coffee-a, " more than that)")
+	} else {
+		fmt.Println("No, I can make only ", coffee, " cups of coffee")
+	}
 	coffeeInit()
 }
