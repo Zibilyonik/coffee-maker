@@ -25,9 +25,6 @@ func coffeeCalc(water, milk, beans, cups int) (int, int) {
 	if coffee > beans/15 {
 		coffee = beans / 15
 	}
-	if coffee > cups {
-		coffee = cups
-	}
 	return coffee, cups
 }
 
