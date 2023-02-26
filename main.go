@@ -53,7 +53,7 @@ func main() {
 	} else if coffee > a {
 		fmt.Println("Yes, I can make that amount of coffee (and even", coffee-a, "more than that)")
 	} else {
-		fmt.Println("No, I can make only ", coffee, " cups of coffee")
+		fmt.Println("No, I can make only", coffee, "cups of coffee")
 	}
 	coffeeInit()
 }
