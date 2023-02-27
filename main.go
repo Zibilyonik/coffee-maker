@@ -55,5 +55,17 @@ func main() {
 	} else {
 		fmt.Println("No, I can make only", coffee, "cups of coffee")
 	}
-	coffeeInit()
+	/*coffeeInit()
+	printCoffee(water, milk, beans, cups, money)
+	fmt.Println("Write action (buy, fill, take):")
+	var action string
+	fmt.Scan(&action)
+	switch action {
+	case "buy":
+		buyCoffee(water, milk, beans, cups, money)
+	case "fill":
+		fillCoffee(water, milk, beans, cups, money)
+	case "take":
+		takeCoffee()
+	} */
 }
