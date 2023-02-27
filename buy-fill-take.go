@@ -4,7 +4,7 @@ import "fmt"
 
 var water, milk, beans, cups, money int = 400, 540, 120, 9, 550
 
-func printCoffee(water, milk, beans, cups, money int) {
+func printCoffee() {
 	fmt.Println("The coffee machine has:")
 	fmt.Println(water, "of water")
 	fmt.Println(milk, "of milk")
@@ -13,29 +13,29 @@ func printCoffee(water, milk, beans, cups, money int) {
 	fmt.Printf("$%v of money", money)
 }
 
-func fillCoffee(water, milk, beans, cups, money int) {
+func fillCoffee() {
 	var a, b, c, d int
 	fmt.Println("Write how many ml of water do you want to add:")
 	fmt.Scan(&a)
-	a += water
+	water += a
 	fmt.Println("Write how many ml of milk do you want to add:")
 	fmt.Scan(&b)
-	b += milk
+	milk += b
 	fmt.Println("Write how many grams of coffee beans do you want to add:")
 	fmt.Scan(&c)
-	c += beans
+	beans += c
 	fmt.Println("Write how many disposable cups of coffee do you want to add:")
 	fmt.Scan(&d)
-	d += cups
-	printCoffee(a, b, c, d, money)
+	cups += d
+	printCoffee()
 }
 func takeCoffee() {
 	fmt.Println("I gave you $", money)
 	money = 0
-	printCoffee(400, 540, 120, 9, money)
+	printCoffee()
 }
 
-func buyCoffee(water, milk, beans, cups, money int) {
+func buyCoffee() {
 	fmt.Println("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:")
 	var coffee int
 	fmt.Scan(&coffee)
@@ -47,7 +47,7 @@ func buyCoffee(water, milk, beans, cups, money int) {
 			beans -= 16
 			cups -= 1
 			money += 4
-			printCoffee(water, milk, beans, cups, money)
+			printCoffee()
 		} else {
 			if water < 250 {
 				fmt.Println("Sorry, not enough water!")
@@ -65,7 +65,7 @@ func buyCoffee(water, milk, beans, cups, money int) {
 			beans -= 20
 			cups -= 1
 			money += 7
-			printCoffee(water, milk, beans, cups, money)
+			printCoffee()
 		} else {
 			if water < 350 {
 				fmt.Println("Sorry, not enough water!")
@@ -85,7 +85,7 @@ func buyCoffee(water, milk, beans, cups, money int) {
 			beans -= 12
 			cups -= 1
 			money += 6
-			printCoffee(water, milk, beans, cups, money)
+			printCoffee()
 		} else {
 			if water < 200 {
 				fmt.Println("Sorry, not enough water!")

@@ -47,28 +47,36 @@ func ingredientCalc(a int) {
 
 func main() {
 	// this is 1-3 stages of the project
-	var coffee, a = inputAmounts()
-	ingredientCalc(a)
-	if coffee == a {
-		fmt.Println("Yes, I can make that amount of coffee")
-	} else if coffee > a {
-		fmt.Println("Yes, I can make that amount of coffee (and even", coffee-a, "more than that)")
-	} else {
-		fmt.Println("No, I can make only", coffee, "cups of coffee")
-	}
-	coffeeInit()
-	// this is 4th stage of the project
 	/*
-		printCoffee(water, milk, beans, cups, money)
-		fmt.Println("Write action (buy, fill, take):")
+		var coffee, a = inputAmounts()
+		ingredientCalc(a)
+		if coffee == a {
+			fmt.Println("Yes, I can make that amount of coffee")
+		} else if coffee > a {
+			fmt.Println("Yes, I can make that amount of coffee (and even", coffee-a, "more than that)")
+		} else {
+			fmt.Println("No, I can make only", coffee, "cups of coffee")
+		}
+		coffeeInit()
+	*/
+
+	// this is 4-6 stages of the project'
+	printCoffee()
+	for {
+		fmt.Println("Write action (buy, fill, take, remaining, exit):")
 		var action string
 		fmt.Scan(&action)
 		switch action {
 		case "buy":
-			buyCoffee(water, milk, beans, cups, money)
+			buyCoffee()
 		case "fill":
-			fillCoffee(water, milk, beans, cups, money)
+			fillCoffee()
 		case "take":
 			takeCoffee()
-		} */
+		case "remaining":
+			printCoffee()
+		case "exit":
+			return
+		}
+	}
 }
